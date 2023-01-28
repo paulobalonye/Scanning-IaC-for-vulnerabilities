@@ -1,0 +1,12 @@
+# Use an official MySQL runtime as the base image
+FROM mysql:8.0
+
+# Copy the database initialization scripts
+COPY init-db.sql /docker-entrypoint-initdb.d/
+
+# Set the environment variables for the root user
+ENV MYSQL_ROOT_PASSWORD=mysecretpassword
+ENV MYSQL_DATABASE=mydb
+
+# Expose port 3306
+EXPOSE 3306

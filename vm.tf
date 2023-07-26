@@ -29,7 +29,7 @@ resource "azurerm_linux_virtual_machine" "app" {
   size                            = var.app_vm_size
   admin_username                  = var.app_admin_user
   admin_password                  = var.app_admin_password
-  disable_password_authentication = false
+  disable_password_authentication = true
 
   custom_data    = base64encode(data.template_file.app-cloud-init.rendered)
 

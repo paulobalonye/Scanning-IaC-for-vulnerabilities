@@ -37,7 +37,7 @@ resource "azurerm_network_security_group" "main-nsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     source_address_prefix      = "192.168.1.0/24"
-    destination_port_range     = "80"
+    destination_port_range     = "8080"
     destination_address_prefix = azurerm_network_interface.app-external.private_ip_address
   }
   
